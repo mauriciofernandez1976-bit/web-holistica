@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terapias Holísticas | Bienestar y Sanación</title>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. CABECERA / INICIO -->
+    <header>
+        <div class="logo">Espacio Holístico</div>
+        <div class="hero-content">
+            <h1>Encuentra tu equilibrio integral</h1>
+            <p>Sanación natural para cuerpo, mente y alma a través de terapias alternativas personalizadas.</p>
+            <a href="#contacto" class="btn-principal">Agenda tu Sesión</a>
+        </div>
+    </header>
+
+    <!-- 2. SOBRE MÍ -->
+    <section id="sobre-mi">
+        <h2>El Camino hacia el Bienestar</h2>
+        <p>Acompaño tu proceso de sanación y autoconocimiento utilizando técnicas milenarias y naturales. Mi objetivo es ayudarte a liberar bloqueos, reducir el estrés y recuperar la armonía que tu cuerpo y mente necesitan para vivir plenamente.</p>
+    </section>
+
+    <!-- 3. TERAPIAS Y SERVICIOS -->
+    <section id="terapias">
+        <h2>Terapias Holísticas</h2>
+        <p class="subtitulo">Tratamientos personalizados según tus necesidades actuales.</p>
+        
+        <div class="contenedor-tarjetas">
+            <!-- Terapia 1 -->
+            <div class="tarjeta">
+                <h3>Auriculoterapia</h3>
+                <p>Estimulación de puntos específicos en la oreja para regular el sistema nervioso, aliviar dolores, reducir la ansiedad y promover la auto-curación del organismo.</p>
+            </div>
+
+            <!-- Terapia 2 -->
+            <div class="tarjeta">
+                <h3>Flores de Bach</h3>
+                <p>Terapia vibracional con esencias naturales que actúan sobre los estados emocionales (miedos, incertidumbre, estrés), devolviendo la paz interior y el equilibrio mental.</p>
+            </div>
+
+            <!-- Terapia 3 -->
+            <div class="tarjeta">
+                <h3>Moxibustión</h3>
+                <p>Técnica de la medicina tradicional china que aplica calor estimulante mediante raíces de artemisa sobre puntos de acupuntura, fortaleciendo la energía vital y la circulación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TESTIMONIOS -->
+    <section id="testimonios">
+        <h2>Experiencias de Sanación</h2>
+        <div class="testimonio">
+            <p>"Llegué con mucho estrés e insomnio. Gracias a la combinación de Flores de Bach y Auriculoterapia logré volver a dormir en paz y recuperar mi centro."</p>
+            <span>- María Laura G.</span>
+        </div>
+        <div class="testimonio">
+            <p>"La moxibustión me ayudó muchísimo a calmar dolores crónicos que nada lograba aliviar. Una atención súper cálida y profesional."</p>
+            <span>- Carlos R.</span>
+        </div>
+    </section>
+
+    <!-- 5. PIE DE PÁGINA / CONTACTO -->
+    <footer id="contacto">
+        <h2>Inicia tu proceso hoy</h2>
+        <p>Atención personalizada con turno previo.</p>
+        <p>📍 Zona de atención o Modalidad (Online/Presencial)</p>
+        <p class="copyright">&copy; 2026 Espacio Holístico. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- 6. BOTÓN FLOTANTE DE WHATSAPP -->
+    <!-- NOTA: Reemplaza el número 123456789 por tu número con código de país (ej: 549351... para Argentina) -->
+    <a href="https://wa.me/5493513407303?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20las%20terapias" class="whatsapp-btn" target="_blank">
+        💬 WhatsApp
+    </a>
+
+</body>
+</html>
