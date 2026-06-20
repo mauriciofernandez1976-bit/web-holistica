@@ -3,473 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espacio Holístico | Conexión y Bienestar</title>
-    
-    <!-- AQUÍ ESTÁ EL CSS CON LOS NUEVOS COLORES MÍSTICOS -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
-
-        :root {
-            --color-bg: #1B1424;          /* Violeta profundo/nocturno */
-            --color-surface: #251D30;     /* Violeta medio para tarjetas */
-            --color-primary: #F3EDF7;     /* Blanco lavanda para texto */
-            --color-secondary: #C5B3D1;   /* Lavanda pastel para subtítulos */
-            --color-accent: #D4AF37;      /* Oro Viejo / Dorado místico */
-            --color-cta: #5A3D73;         /* Violeta amatista para botones */
-            --color-cta-hover: #745293;   /* Violeta más vibrante */
-            --color-whatsapp: #25D366;    /* Verde WhatsApp */
-            
-            --font-titles: 'Lora', serif;
-            --font-body: 'Inter', sans-serif;
-            --radius: 16px;
-            --shadow: 0 12px 32px rgba(12, 8, 17, 0.4);
-            --transition: cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--color-bg);
-            color: var(--color-primary);
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        section {
-            padding: 60px 24px;
-            text-align: center;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-titles);
-            font-weight: 500;
-            line-height: 1.3;
-            margin-bottom: 16px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 2px;
-            background-color: var(--color-accent);
-            margin: 12px auto 0;
-        }
-
-        section > p {
-            font-size: 1rem;
-            color: var(--color-secondary);
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: var(--radius);
-        }
-
-        a {
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .btn-primary, .btn-servicio, .btn-contacto {
-            display: inline-block;
-            background-color: var(--color-cta);
-            color: #ffffff;
-            padding: 14px 28px;
-            border-radius: var(--radius);
-            font-weight: 500;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(90, 61, 115, 0.3);
-        }
-
-        .btn-primary:hover, .btn-servicio:hover, .btn-contacto:hover {
-            background-color: var(--color-cta-hover);
-            transform: translateY(-2px);
-        }
-
-        header {
-            background-color: rgba(27, 20, 36, 0.85);
-            backdrop-filter: blur(8px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 16px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid rgba(197, 179, 209, 0.1);
-        }
-
-        .logo img {
-            max-height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 16px;
-        }
-
-        header nav a {
-            color: var(--color-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        header nav a:hover {
-            color: var(--color-primary);
-        }
-
-        #inicio {
-            background: linear-gradient(135deg, #1B1424 0%, #2A1B3D 100%);
-            padding: 80px 24px;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #inicio h1 {
-            font-size: 2.2rem;
-            color: var(--color-primary);
-            margin-bottom: 20px;
-        }
-
-        #inicio p {
-            font-size: 1.1rem;
-            color: var(--color-secondary);
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            font-style: normal;
-        }
-
-        #servicios {
-            background-color: var(--color-bg);
-        }
-
-        .servicios-container {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .servicio-card {
-            background-color: var(--color-surface);
-            padding: 32px 24px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(197, 179, 209, 0.05);
-            box-shadow: var(--shadow);
-            text-align: left;
-        }
-
-        .servicio-card h3 {
-            font-size: 1.4rem;
-            color: var(--color-primary);
-        }
-
-        .servicio-card p {
-            font-size: 0.95rem;
-            color: var(--color-secondary);
-            margin-bottom: 24px;
-        }
-
-        .servicio-card .precio {
-            display: block;
-            font-family: var(--font-titles);
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--color-accent);
-            margin-bottom: 20px;
-        }
-
-        .servicio-card .btn-servicio {
-            width: 100%;
-            text-align: center;
-        }
-
-        .galeria-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .galeria-grid figure {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .galeria-grid img {
-            width: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .galeria-grid figure:hover img {
-            transform: scale(1.03);
-        }
-
-        .galeria-grid figcaption {
-            background: linear-gradient(transparent, rgba(27, 20, 36, 0.9));
-            color: #ffffff;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 20px 16px 12px;
-            font-size: 0.9rem;
-            text-align: left;
-            font-family: var(--font-titles);
-        }
-
-        #testimonios {
-            background-color: #160F1E;
-        }
-
-        .testimonios-container {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .testimonio-card {
-            background-color: var(--color-surface);
-            padding: 32px 24px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .testimonio-card p {
-            font-size: 1rem;
-            font-style: italic;
-            color: var(--color-primary);
-            margin-bottom: 16px;
-        }
-
-        .testimonio-card cite {
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-secondary);
-            display: block;
-        }
-
-        #contacto {
-            background-color: var(--color-bg);
-        }
-
-        .contacto-info {
-            background-color: var(--color-surface);
-            padding: 32px 24px;
-            border-radius: var(--radius);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .contacto-info p {
-            margin-bottom: 16px;
-            font-size: 1rem;
-        }
-
-        .contacto-info .btn-contacto {
-            margin-top: 12px;
-            width: 100%;
-        }
-
-        footer {
-            background-color: #0F0914;
-            color: rgba(255, 255, 255, 0.5);
-            padding: 40px 24px;
-            font-size: 0.85rem;
-        }
-
-        footer p:first-child {
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 24px;
-            right: 24px;
-            background-color: var(--color-whatsapp);
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20BA56;
-        }
-
-        @media (min-width: 768px) {
-            header { flex-direction: row; justify-content: space-between; padding: 20px 40px; }
-            section { padding: 80px 40px; }
-            #inicio h1 { font-size: 3rem; }
-            .servicios-container, .testimonios-container { flex-direction: row; justify-content: center; flex-wrap: wrap; }
-            .servicio-card, .testimonio-card { flex: 1 1 300px; max-width: 380px; }
-            .galeria-grid { flex-direction: row; justify-content: center; }
-            .galeria-grid figure { flex: 1; max-width: 350px; }
-        }
-    </style>
+    <title>Terapias Holísticas | Bienestar y Sanación</title>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- 1. CABECERA / INICIO -->
     <header>
-        <div class="logo">
-            <!-- REEMPLAZA "logo-holistico.png" POR EL NOMBRE DE TU ARCHIVO DE LOGO -->
-            <a href="#inicio">
-                <img src="logo-holistico.png" alt="Logo Espacio Holístico">
-            </a>
+        <div class="logo">Espacio Holístico</div>
+        <div class="hero-content">
+            <h1>Encuentra tu equilibrio integral</h1>
+            <p>Sanación natural para cuerpo, mente y alma a través de terapias alternativas personalizadas.</p>
+            <a href="#contacto" class="btn-principal">Agenda tu Sesión</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section id="inicio">
-            <div class="hero-content">
-                <h1>Tu espacio para reconectar, sanar y equilibrar tu energía</h1>
-                <p>Descubre terapias holísticas diseñadas para devolverle la armonía a tu cuerpo, mente y espíritu.</p>
-                <a href="#servicios" class="btn-primary">Ver Terapias</a>
+    <!-- 2. SOBRE MÍ -->
+    <section id="sobre-mi">
+        <h2>El Camino hacia el Bienestar</h2>
+        <p>Acompaño tu proceso de sanación y autoconocimiento utilizando técnicas milenarias y naturales. Mi objetivo es ayudarte a liberar bloqueos, reducir el estrés y recuperar la armonía que tu cuerpo y mente necesitan para vivir plenamente.</p>
+    </section>
+
+    <!-- 3. TERAPIAS Y SERVICIOS -->
+    <section id="terapias">
+        <h2>Terapias Holísticas</h2>
+        <p class="subtitulo">Tratamientos personalizados según tus necesidades actuales.</p>
+        
+        <div class="contenedor-tarjetas">
+            <!-- Terapia 1 -->
+            <div class="tarjeta">
+                <h3>Auriculoterapia</h3>
+                <p>Estimulación de puntos específicos en la oreja para regular el sistema nervioso, aliviar dolores, reducir la ansiedad y promover la auto-curación del organismo.</p>
             </div>
-        </section>
 
-        <section id="servicios">
-            <h2>Nuestras Terapias</h2>
-            <p>Encuentra la sesión ideal para tu momento actual.</p>
-            
-            <div class="servicios-container">
-                <article class="servicio-card">
-                    <h3>Sesión de Reiki Usui</h3>
-                    <p>Armonización de centros energéticos (chakras) para liberar estrés y bloquear tensiones acumuladas.</p>
-                    <span class="precio">$25.000 / sesión</span>
-                    <a href="https://wa.me/1234567890?text=Hola,%20quiero%20información%20sobre%20la%20sesión%20de%20Reiki" target="_blank" class="btn-servicio">Reservar Turno</a>
-                </article>
-
-                <article class="servicio-card">
-                    <h3>Lectura de Registros Akáshicos</h3>
-                    <p>Conexión con la memoria de tu alma para obtener guía, claridad y respuestas a tus procesos actuales.</p>
-                    <span class="precio">$30.000 / sesión</span>
-                    <a href="https://wa.me/1234567890?text=Hola,%20quiero%20información%20sobre%20Registros%20Akáshicos" target="_blank" class="btn-servicio">Reservar Turno</a>
-                </article>
-
-                <article class="servicio-card">
-                    <h3>Masaje Holístico Descontracturante</h3>
-                    <p>Fusión de técnicas corporales combinadas con aromaterapia y sonidos sagrados para una relajación profunda.</p>
-                    <span class="precio">$28.000 / sesión</span>
-                    <a href="https://wa.me/1234567890?text=Hola,%20quiero%20información%20sobre%20los%20Masajes" target="_blank" class="btn-servicio">Reservar Turno</a>
-                </article>
+            <!-- Terapia 2 -->
+            <div class="tarjeta">
+                <h3>Flores de Bach</h3>
+                <p>Terapia vibracional con esencias naturales que actúan sobre los estados emocionales (miedos, incertidumbre, estrés), devolviendo la paz interior y el equilibrio mental.</p>
             </div>
-        </section>
 
-        <section id="galeria">
-            <h2>El Espacio</h2>
-            <p>Un ambiente cálido, seguro y silencioso preparado especialmente para ti.</p>
-            
-            <div class="galeria-grid">
-                <figure>
-                    <img src="https://via.placeholder.com/400x300" alt="Consultorio principal del espacio holístico">
-                    <figcaption>Nuestro rincón de paz</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://via.placeholder.com/400x300" alt="Detalle de elementos de terapia como velas y cuencos">
-                    <figcaption>Herramientas de armonización</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://via.placeholder.com/400x300" alt="Zona de recepción y espera relajante">
-                    <figcaption>Tu bienvenida</figcaption>
-                </figure>
+            <!-- Terapia 3 -->
+            <div class="tarjeta">
+                <h3>Moxibustión</h3>
+                <p>Técnica de la medicina tradicional china que aplica calor estimulante mediante raíces de artemisa sobre puntos de acupuntura, fortaleciendo la energía vital y la circulación.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="testimonios">
-            <h2>Experiencias de Consultantes</h2>
-            
-            <div class="testimonios-container">
-                <blockquote class="testimonio-card">
-                    <p>"Llegué con muchísimo estrés acumulado por el trabajo. La sesión de Reiki me devolvió el eje y una paz mental que no sentía hace meses. Súper recomendado."</p>
-                    <cite>– Mariana R.</cite>
-                </blockquote>
+    <!-- 4. TESTIMONIOS -->
+    <section id="testimonios">
+        <h2>Experiencias de Sanación</h2>
+        <div class="testimonio">
+            <p>"Llegué con mucho estrés e insomnio. Gracias a la combinación de Flores de Bach y Auriculoterapia logré volver a dormir en paz y recuperar mi centro."</p>
+            <span>- María Laura G.</span>
+        </div>
+        <div class="testimonio">
+            <p>"La moxibustión me ayudó muchísimo a calmar dolores crónicos que nada lograba aliviar. Una atención súper cálida y profesional."</p>
+            <span>- Carlos R.</span>
+        </div>
+    </section>
 
-                <blockquote class="testimonio-card">
-                    <p>"La lectura de registros me dio la claridad que necesitaba para tomar una decisión muy importante en mi vida. Un espacio de contención hermoso."</p>
-                    <cite>– Carlos G.</cite>
-                </blockquote>
-            </div>
-        </section>
-
-        <section id="contacto">
-            <h2>Inicia tu camino de bienestar</h2>
-            <p>¿Tienes dudas sobre qué terapia necesitas? Escríbeme y lo evaluamos juntos.</p>
-            
-            <div class="contacto-info">
-                <p><strong>Ubicación:</strong> Online & Presencial</p>
-                <p><strong>Horarios:</strong> Lunes a Viernes de 09:00 a 19:00 hs.</p>
-                <a href="https://wa.me/1234567890" target="_blank" class="btn-contacto">Enviar un mensaje directo</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Espacio Holístico. Todos los derechos reservados.</p>
-        <p>Diseñado con amor para tu bienestar.</p>
+    <!-- 5. PIE DE PÁGINA / CONTACTO -->
+    <footer id="contacto">
+        <h2>Inicia tu proceso hoy</h2>
+        <p>Atención personalizada con turno previo.</p>
+        <p>📍 Zona de atención o Modalidad (Online/Presencial)</p>
+        <p class="copyright">&copy; 2026 Espacio Holístico. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/1234567890?text=Hola!%20Visité%20tu%20web%20y%20me%20gustaría%20hacer%20una%20consulta." 
-       class="whatsapp-float" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Comunicarse por WhatsApp">
-        <span>WhatsApp</span>
+    <!-- 6. BOTÓN FLOTANTE DE WHATSAPP -->
+    <!-- NOTA: Reemplaza el número 123456789 por tu número con código de país (ej: 549351... para Argentina) -->
+    <a href="https://wa.me/5493513407303?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20las%20terapias" class="whatsapp-btn" target="_blank">
+        💬 WhatsApp
     </a>
 
 </body>
