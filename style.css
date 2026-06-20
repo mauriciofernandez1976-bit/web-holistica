@@ -1,22 +1,23 @@
 /* ==========================================================================
-   1. VARIABLES DE COLOR (Gama Violeta Místico, Profundo y Equilibrado)
+   1. VARIABLES DE COLOR (Gama Violeta Claro / Lavanda de Paz y Equilibrio)
    ========================================================================== */
 :root {
-    --color-bg: #160F1E;          /* Violeta nocturno muy profundo (transmite misterio, calma y cosmos) */
-    --color-surface: #23192E;     /* Violeta medio para las tarjetas y bloques contenedores */
-    --color-primary: #F2EBF7;     /* Blanco lavanda muy claro para textos principales (alta legibilidad) */
-    --color-secondary: #CBB9D9;   /* Lavanda pastel suave para subtítulos y textos secundarios */
-    --color-accent: #D4AF37;      /* Oro Viejo / Dorado sutil para detalles de iluminación y equilibrio */
-    --color-cta: #53346B;         /* Violeta amatista para botones principales */
-    --color-cta-hover: #6C468A;   /* Amatista más luminoso para interacciones */
+    --color-bg: #F7F4FA;          /* Fondo lavanda blanquecino, súper limpio y relajante */
+    --color-surface: #FFFFFF;     /* Blanco puro para destacar las tarjetas */
+    --color-primary: #3B2A4A;     /* Violeta ciruela oscuro únicamente para textos (asegura legibilidad) */
+    --color-secondary: #6A527A;   /* Violeta medio apagado para párrafos y descripciones */
+    --color-lavanda: #E8DFF5;      /* Lavanda pastel claro para fondos secundarios */
+    --color-accent: #C5A059;      /* Dorado apagado/Ocre que combina con los detalles de tu logo */
+    --color-cta: #7D6493;         /* Violeta pastel intermedio para el botón de acción */
+    --color-cta-hover: #674E7B;   /* Violeta un poco más intenso para el hover */
     --color-whatsapp: #25D366;    /* Verde oficial de WhatsApp */
     
-    /* Fuentes de tu HTML */
+    /* Fuentes */
     --font-titles: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
     
     --radius: 16px;
-    --shadow: 0 12px 32px rgba(10, 6, 14, 0.5);
+    --shadow: 0 10px 24px rgba(125, 100, 147, 0.06); /* Sombra lila muy suave */
     --transition: cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
 }
 
@@ -59,11 +60,11 @@ h2 {
     margin-bottom: 16px;
 }
 
-/* Detalle místico: una pequeña línea dorada debajo de cada título H2 */
+/* Línea decorativa dorada debajo de títulos */
 h2::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 40px;
     height: 1.5px;
     background-color: var(--color-accent);
     margin: 12px auto 0;
@@ -75,31 +76,36 @@ p {
 }
 
 /* ==========================================================================
-   3. SECCIÓN DE CABECERA (HERO)
+   3. SECCIÓN DE CABECERA (HERO) CON LOGO
    ========================================================================== */
 header {
-    background: linear-gradient(135deg, #160F1E 0%, #2A173D 100%);
-    min-height: 80vh;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-lavanda) 100%);
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid rgba(203, 185, 217, 0.05);
+    border-bottom: 1px solid rgba(125, 100, 147, 0.1);
 }
 
 header .logo {
-    font-family: var(--font-titles);
-    font-size: 1.5rem;
-    color: var(--color-accent); /* Tu marca resalta en oro místico */
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
+    width: 100%;
+    max-width: 450px; /* Tamaño ideal para que luzca en celulares sin romper */
+    margin-bottom: 24px;
+    padding: 0 10px;
+}
+
+header .logo img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 header h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: var(--color-primary);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-style: italic;
 }
 
 header p {
@@ -108,7 +114,7 @@ header p {
     margin: 0 auto 32px;
 }
 
-/* Botón Agenda tu Sesión */
+/* Botón de Acción */
 .btn-principal {
     display: inline-block;
     background-color: var(--color-cta);
@@ -118,14 +124,14 @@ header p {
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 16px rgba(83, 52, 107, 0.4);
+    box-shadow: 0 4px 14px rgba(125, 100, 147, 0.2);
     transition: var(--transition);
 }
 
 .btn-principal:hover {
     background-color: var(--color-cta-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(83, 52, 107, 0.6);
+    box-shadow: 0 6px 20px rgba(125, 100, 147, 0.3);
 }
 
 /* ==========================================================================
@@ -157,40 +163,42 @@ header p {
     background-color: var(--color-surface);
     padding: 32px 24px;
     border-radius: var(--radius);
-    border: 1px solid rgba(203, 185, 217, 0.05);
+    border: 1px solid rgba(125, 100, 147, 0.08);
     box-shadow: var(--shadow);
     text-align: left;
     transition: var(--transition);
 }
 
 .tarjeta:hover {
-    border-color: rgba(212, 175, 55, 0.3); /* Al tocarla o pasar el mouse brilla sutilmente en dorado */
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
 }
 
 .tarjeta h3 {
     font-size: 1.4rem;
-    color: var(--color-accent); /* Títulos de terapias en dorado para dar equilibrio */
+    color: var(--color-primary); 
     margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .tarjeta p {
     font-size: 0.95rem;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 /* ==========================================================================
    6. TESTIMONIOS
    ========================================================================== */
 #testimonios {
-    background: linear-gradient(180deg, var(--color-bg) 0%, #1D1226 100%);
+    background-color: var(--color-lavanda);
 }
 
 .testimonio {
-    background-color: rgba(35, 25, 46, 0.6);
-    padding: 24px;
+    background-color: var(--color-surface);
+    padding: 28px;
     border-radius: var(--radius);
     margin-bottom: 20px;
-    border-left: 3px solid var(--color-cta);
+    box-shadow: var(--shadow);
 }
 
 .testimonio p {
@@ -203,29 +211,32 @@ header p {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-secondary);
+    color: var(--color-accent);
+    font-weight: 700;
 }
 
 /* ==========================================================================
    7. FOOTER / CONTACTO
    ========================================================================== */
 footer {
-    background-color: #0E0914; /* Cierre total oscuro */
-    border-top: 1px solid rgba(203, 185, 217, 0.05);
+    background-color: var(--color-primary);
+    color: var(--color-lavanda);
 }
 
 footer h2 {
+    color: #FFFFFF;
     font-size: 1.8rem;
     margin-bottom: 24px;
 }
 
 footer p {
+    color: var(--color-lavanda);
     margin-bottom: 12px;
 }
 
 footer .copyright {
     font-size: 0.8rem;
-    color: rgba(203, 185, 217, 0.4);
+    color: rgba(232, 223, 245, 0.4);
     margin-top: 40px;
 }
 
@@ -241,12 +252,12 @@ footer .copyright {
     background-color: var(--color-whatsapp);
     color: #FFFFFF;
     padding: 0 20px;
-    border-radius: 24px; /* Bordes redondeados tipo píldora */
+    border-radius: 24px;
     text-decoration: none;
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 700;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     z-index: 999;
     display: flex;
     align-items: center;
@@ -260,7 +271,7 @@ footer .copyright {
 }
 
 /* ==========================================================================
-   9. RESPONSIVE / TABLETS Y COMPUTADORAS
+   9. RESPONSIVE / COMPUTADORAS
    ========================================================================== */
 @media (min-width: 768px) {
     section, header, footer {
@@ -268,7 +279,7 @@ footer .copyright {
     }
 
     header h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .contenedor-tarjetas {
